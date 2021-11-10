@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevador - Igor Vinnycius</title>
+</head>
+
+<body>
+    <script>
+        //execute no console, por exemplo: elevador.subir(); 
+
+        class Elevador {
+            constructor(andar, totalandares, capicidade, qtdpessoas) {
+                this.andar = 12;
+                this.totalandares = 12;
+                this.capacidade = 7;
+                this.qtdpessoas = 0;
+            }
+
+            entrar() {
+                console.log(this.capacidade);
+                if (this.qtdpessoas < this.capacidade) {
+                    this.qtdpessoas++;
+                    alert('Há ' + this.qtdpessoas + ' pessoa(s) no elevador');
+                } 
+                else {
+                    alert('A capacidade de ' + this.capacidade + ' pessoas foi atingida');
+                }
+            }
+
+            subir() {
+                if (this.andar < this.totalandares) {
+                    this.andar++;
+                    if (this.andar == 0) {
+                        alert('Você está no Térreo')
+                    } 
+                    else {
+                        alert('Você está no ' + this.andar + '° andar');
+                    }
+                } 
+                else {
+                    alert('Você chegou no último andar! Deve ter uma ótima vista daí');
+                }
+            }
+
+            descer() {
+                if (this.andar > 0) {
+                    this.andar--;
+                    if (this.andar == 0) {
+                        alert('Você está no Térreo');
+                    } 
+                    else {
+                        alert('Você está no ' + this.andar + '° andar');
+                    }
+                }
+                else{
+                    alert('Do chão não passa, aqui o térreo é o andar mais baixo');
+                }
+            }
+
+            sair() {
+                if(this.qtdpessoas > 0){
+                    this.qtdpessoas--;
+                    alert('Há ' + this.qtdpessoas + ' pessoa(s) no elevador');
+                }
+                else{
+                    alert('Não tem ninguém no elevador');
+                }
+            }
+        }
+
+        var elevador = new Elevador();
+
+    </script>
+</body>
+
+</html>
